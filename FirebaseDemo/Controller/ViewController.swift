@@ -8,8 +8,6 @@
 
 import UIKit
 import MapKit
-import FirebaseDatabase
-import Firebase
 
 
 //BRIEF BACKGROUND
@@ -24,19 +22,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     //Manages Location-related operations
     let locationManager = CLLocationManager()
-    
     var mapHasCenteredOnce = false
-    var geoFire: GeoFire!
     
-    var dbref: DatabaseReference! //REFERENCE FIREBASE DATABASE
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self //make the view controller the map view 's delegate (why does it do this?)
         mapView.userTrackingMode = MKUserTrackingMode.follow //have map centered on user's location
-        dbref = Database.database().reference()
-        geoFire = GeoFire(firebaseRef: dbref) //ATTACH GEOFIRE OBJECT TO DB SO IT CAN COMMUNICATE TO THE DB
+       
+        //1. GET DB REFERENCE
+        //2. ATTACH GEOFIRE OBJECT TO DB SO IT CAN COMMUNICATE TO THE DB
     }
     
     /////////////////
@@ -161,51 +157,32 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //SAVE LOCATION TO DATABASE USING THIS KEY
         
-        //create a places object with location key 
-//        dbref.child("places").setLocation(location, forKey: "TsingHua")
+        //8. . setLocation to add locations with a referecnce to db using geofire with a reference value
+        
+        //4. add FIREBASE DATA
+        
+        //5. update information
+        
+        //6. add a key to the task
 
-        geoFire.setLocation(location, forKey: "\(pokeId)")
+        //7. delete information
         
-        
-        //add information
-//        dbref.child("34").child("tasks").childByAutoId().setValue("Do iOS Presentation");
-        
-        //update information
-        
-//        var status = "done"
-//        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue("Finished iOS Presentation");
-        
-        //add a key to the task
-//        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue(["status": status]);
-
-        //delete information
-        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").removeValue();
-        
-
-     
     }
     
     
-    //USING GEOFIRE TO GET THINGS NEARBY
+    //USING GEOFIRE TO GET POKEMON NEARBY
     //request for pokemon(keys) within a region and create an annotation for the pokemon returned
     func showSightingsOnMap(location: CLLocation){
-        let circleQuery = geoFire?.query(at: location, withRadius: 2.5) //query for locations 2.5 km away from user
+      
+        //QUERY STUFF
         
         //listen and handle returned data(keys), aka PokemonId
         //IS EVERY ANNOTATION ADDED? WHAT HAPPENES?
-        _ = circleQuery?.observe(GFEventType.keyEntered, with: { (key, location) in
-            
-            let key = key
-            let location = location
-            
-            let anno = PokeAnnotation(coordinate: location.coordinate, pokemonNumber: Int(key)!)
-            self.mapView.addAnnotation(anno) //display annotations on map
-            ////WHAT DOES ADDANNOTATION DO?
+        
+        ////WHAT DOES ADDANNOTATION DO?
             
         })
     }
-    
-    
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -214,13 +191,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     //ADD POKEMON TO LOCATION AT THE CENTER OF THE MAP
     @IBAction func spotRandomPokemon(_ sender: Any) {
-        
-//        dbref.child("users/\("12345")/username").setValue("djl132")
-
 
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude
             , longitude: mapView.centerCoordinate.longitude)
         let rand = arc4random_uniform(151) + 1
+        
+        //CREATE A SIGHTING
         createSighting(forLocation: loc, withPokemon: Int(rand))
     }
 

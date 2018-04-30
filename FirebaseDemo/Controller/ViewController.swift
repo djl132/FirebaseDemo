@@ -81,7 +81,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     //WHEN USER PANS MAP, UPDATE SIGHTINGS/ANNOTATIONS.
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
-        showSightingsOnMap(location: loc)
+            showSightingsOnMap(location: loc)
     }
     
     
@@ -97,6 +97,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let options = [ MKLaunchOptionsMapCenterKey : NSValue (mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan : regionSpan.span), MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving ] as [String : Any]
             
             MKMapItem.openMaps(with: [destination], launchOptions: options) //open APPLE MAPS with destination with options
+        }
     }
     
     
@@ -159,7 +160,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func createSighting(forLocation location: CLLocation, withPokemon pokeId: Int){
         
         //SAVE LOCATION TO DATABASE USING THIS KEY
+        
+        //create a places object with location key 
+//        dbref.child("places").setLocation(location, forKey: "TsingHua")
+
         geoFire.setLocation(location, forKey: "\(pokeId)")
+        
+        
+        //add information
+        dbref.child("34").child("tasks").childByAutoId().setValue("Do iOS Presentation");
+        
+     
     }
     
     
@@ -192,15 +203,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     //ADD POKEMON TO LOCATION AT THE CENTER OF THE MAP
     @IBAction func spotRandomPokemon(_ sender: Any) {
         
+//        dbref.child("users/\("12345")/username").setValue("djl132")
+
+
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude
             , longitude: mapView.centerCoordinate.longitude)
-        let rand = arc4random() + 1
+        let rand = arc4random_uniform(151) + 1
         createSighting(forLocation: loc, withPokemon: Int(rand))
     }
-    
-    
-    
-
 
 
 }

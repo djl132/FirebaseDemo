@@ -168,8 +168,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         
         //add information
-        dbref.child("34").child("tasks").childByAutoId().setValue("Do iOS Presentation");
+//        dbref.child("34").child("tasks").childByAutoId().setValue("Do iOS Presentation");
         
+        //update information
+        
+//        var status = "done"
+//        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue("Finished iOS Presentation");
+        
+        //add a key to the task
+//        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue(["status": status]);
+
+        //delete information
+        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").removeValue();
+        
+
      
     }
     

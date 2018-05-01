@@ -161,11 +161,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //SAVE LOCATION TO DATABASE USING THIS KEY
         
-        //create a places object with location key 
-//        dbref.child("places").setLocation(location, forKey: "TsingHua")
-
-        geoFire.setLocation(location, forKey: "\(pokeId)")
-        
+        //create a places object with location key
+//        geoFire.setLocation(location, forKey: "\(pokeId)")
         
         //add information
 //        dbref.child("34").child("tasks").childByAutoId().setValue("Do iOS Presentation");
@@ -179,7 +176,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue(["status": status]);
 
         //delete information
-        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").removeValue();
+//        dbref.child("14").child("tasks/LBJgJL4klHHI9UUm_aI").removeValue();
+        
+        
+        dbref.child("14").removeValue();
+        
+        
         
 
      

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="ftg-Zf-D35">
+            <objects>
+                <navigationController id="ixI-2N-M9l" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zCr-KJ-yuO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="H1E-fX-D3D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvc-SG-TX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-962" y="140"/>
+        </scene>
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="FirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,10 +39,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-dH-6td">
-                                <rect key="frame" x="10" y="607" width="50" height="50"/>
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1Fv-nT-Otd"/>
-                                    <constraint firstAttribute="width" constant="50" id="Uer-WK-Zgv"/>
+                                    <constraint firstAttribute="width" constant="50" id="Da2-KT-pgR"/>
+                                    <constraint firstAttribute="height" constant="50" id="Yj9-Rh-26L"/>
                                 </constraints>
                                 <state key="normal" image="pokeball"/>
                             </button>
@@ -35,17 +51,19 @@
                         <constraints>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SXt-Ed-a26"/>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bmp-W1-tco"/>
+                            <constraint firstItem="b5I-dH-6td" firstAttribute="centerX" secondItem="pi7-D2-l0B" secondAttribute="centerX" id="dbe-Ij-Sgz"/>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hfv-vz-rqb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b5I-dH-6td" secondAttribute="bottom" constant="10" id="p7x-zq-GJs"/>
-                            <constraint firstItem="b5I-dH-6td" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="uwV-7s-sGX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b5I-dH-6td" secondAttribute="bottom" constant="30" id="sA6-E4-uK5"/>
+                            <constraint firstItem="b5I-dH-6td" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tlz-wV-yt6"/>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zho-JM-7pG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="v4P-RH-B1D"/>
                     <connections>
-                        <segue destination="aJB-Xh-R6T" kind="popoverPresentation" id="dZE-zj-W70">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <outlet property="goToLocations" destination="b5I-dH-6td" id="AuU-Fi-1pH"/>
+                        <outlet property="mapView" destination="pi7-D2-l0B" id="TD2-QL-k1O"/>
+                        <segue destination="aJB-Xh-R6T" kind="show" id="97R-jk-pYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -123,7 +141,7 @@
             </objects>
             <point key="canvasLocation" x="1724" y="806"/>
         </scene>
-        <!--Places List Controller-->
+        <!--Your Places-->
         <scene sceneID="spo-G9-IUX">
             <objects>
                 <tableViewController id="aJB-Xh-R6T" customClass="PlacesListController" customModule="FirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,6 +180,7 @@
                             <outlet property="delegate" destination="aJB-Xh-R6T" id="xd5-Wr-I8p"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Your Places" id="1kZ-L2-kB1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjo-qh-mRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

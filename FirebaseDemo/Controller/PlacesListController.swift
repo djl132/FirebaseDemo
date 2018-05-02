@@ -144,19 +144,15 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     */
 
     
-  //segue
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let vc = segue.destination as? AddLocationController{
 //            print("GOT TO ADDLOCATIONCONTROLLER")
-//        }
-////        else if let vc = segue.destination as? TaskListController, let placeName = sender as? String{
-////            vc.place = placeName;
-////
-////            vc.tasks = //QUERY STRING ARRAY OF TASKS.
-////        }
-//        // Pass the selected object to the new view controller.
 //
-//    }
+//        }
+     
+        // Pass the selected object to the new view controller.
+
+    }
 
 }
 

@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="79.610194902548727"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Choose Errand Location-->
         <scene sceneID="2kQ-nF-WOf">
             <objects>
                 <tableViewController id="cNl-kA-yUH" sceneMemberID="viewController">
@@ -108,10 +108,11 @@
                             <outlet property="delegate" destination="cNl-kA-yUH" id="Oqa-50-gmG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Choose Errand Location" id="PmP-LC-D4q"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0k-e0-vxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="806"/>
+            <point key="canvasLocation" x="1697" y="68"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bpk-Wv-fO8">
@@ -183,6 +184,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Places" id="1kZ-L2-kB1"/>
+                    <connections>
+                        <segue destination="cNl-kA-yUH" kind="show" id="K8L-fM-Y1y"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjo-qh-mRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

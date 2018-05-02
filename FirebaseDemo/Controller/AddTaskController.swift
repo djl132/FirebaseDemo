@@ -1,26 +1,16 @@
 ////
-////  AddLocationController.swift
+////  AddPlaceController.swift
 ////  FirebaseDemo
 ////
-////  Created by Derek Joshua Lin on 5/1/18.
+////  Created by Derek Joshua Lin on 5/2/18.
 ////  Copyright © 2018 umii. All rights reserved.
 ////
 //
 //import UIKit
-//import FirebaseDatabase
-//import Firebase
 //
+//class AddTaskController: UIViewController {
 //
-//class AddLocationController: UIViewController {
-//
-//    var dbref : DatabaseReference!;
-//    var geoFire : GeoFire!;
-//    var loc:CLLocation = CLLocation();
-//    
 //    override func viewDidLoad() {
-//        dbref = Database.database().reference()
-//        geoFire = GeoFire(firebaseRef: dbref)
-//        
 //        super.viewDidLoad()
 //
 //        // Do any additional setup after loading the view.
@@ -29,10 +19,6 @@
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.
-//    }
-//    
-//    @IBAction func addLocation(){
-//        
 //    }
 //    
 //
@@ -47,4 +33,4 @@
 //    */
 //
 //}
-//
+

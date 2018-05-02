@@ -11,17 +11,69 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 
-class PlacesListController: UITableViewController {
+class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     
     var places : [String] = []
-    var dbref : DatabaseReference;
-    var geoFire : GeoFire;
+    var dbref : DatabaseReference!
+    var geoFire : GeoFire!
+    let locationManager = CLLocationManager()
+
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    var handle: UInt?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        dbref = Database.database().reference()
+        geoFire = GeoFire(firebaseRef: dbref)
+        
+        //get value
+        
+        //gt the children in the form of dictionary as a snapshot
+        handle = dbref.child("places").observe(.value, with: { (snapshot) in
+            if let keys = (snapshot.value as? [String: Any])?.keys {
+                self.places = Array(keys)
+            } else {
+                self.places = []
+            }
+            self.tableView.reloadData()
+        })
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let handle = handle {
+            dbref.removeObserver(withHandle: handle)
+            self.handle = nil
+        }
+    }
+    
+    override func viewDidLoad() {
+   
+        //display places
+//        let placesRef = dbref.child(byAppendingPath: "places")
+//        placesRef.queryOrdered(byChild: "placeName").observe(.childAdded, with: { snapshot in
+//
+//            if let title = snapshot.value() as? String {
+//                self.titlesArray.append(title)
+//            }
+
+        super.viewDidLoad()
+ 
+    }
+        
+    
+//    // Listen for new comments in the Firebase database
+//    commentsRef.observe(.childAdded, with: { (snapshot) -> Void in
+//    self.comments.append(snapshot)
+//    self.tableView.insertRows(at: [IndexPath(row: self.comments.count-1, section: self.kSectionComments)], with: UITableViewRowAnimation.automatic)
+//    })
+//    // Listen for deleted comments in the Firebase database
+//    commentsRef.observe(.childRemoved, with: { (snapshot) -> Void in
+//    let index = self.indexOfMessage(snapshot)
+//    self.comments.remove(at: index)
+//    self.tableView.deleteRows(at: [IndexPath(row: index, section: self.kSectionComments)], with: UITableViewRowAnimation.automatic)
+//    })
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,24 +84,31 @@ class PlacesListController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return places.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToTaskList", sender: places[indexPath.row])
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as? PlaceCell else {return UITableViewCell()}
+        cell.placeName?.text = places[indexPath.row]
 
         return cell
     }
-    */
-
+    
+    
+    @IBAction func addPlace(){
+        performSegue(withIdentifier: "addPlace", sender: locationManager.location)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -85,14 +144,20 @@ class PlacesListController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+  //segue
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let vc = segue.destination as? AddLocationController{
+//            print("GOT TO ADDLOCATIONCONTROLLER")
+//        }
+////        else if let vc = segue.destination as? TaskListController, let placeName = sender as? String{
+////            vc.place = placeName;
+////
+////            vc.tasks = //QUERY STRING ARRAY OF TASKS.
+////        }
+//        // Pass the selected object to the new view controller.
+//
+//    }
 
 }
+

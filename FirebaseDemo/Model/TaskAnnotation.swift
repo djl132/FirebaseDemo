@@ -12,17 +12,13 @@ import MapKit
 class TaskAnnotation: NSObject, MKAnnotation{
     
     var coordinate: CLLocationCoordinate2D
-    var numOfTasks : Int?
-    var placeName : String?
+    var numOfTasks : Int
+    var placeName : String;
     
-    var pokemon = ["dsjfksda", "asdfsaf"]
-    
-    init(coordinate: CLLocationCoordinate2D, numOfTasks: Int?, placeName: String?){
+    init(coordinate: CLLocationCoordinate2D, numOfTasks: Int, placeName: String){
         self.coordinate = coordinate
-        self.pokemonNumber  = pokemonNumber
-        self.pokemonName = pokemon[1].capitalized
-        
-        //annotation property
-        self.title = self.pokemonName
+        self.placeName = placeName
+        self.numOfTasks = numOfTasks
+        //annotation properties
     }
 }

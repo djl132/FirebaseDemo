@@ -165,8 +165,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //        geoFire.setLocation(location, forKey: "\(pokeId)")
         
         //add information
-        dbref.child("34").child("tasks").childByAutoId().setValue("Testing Demo for iOS Presentation");
-        
+//        dbref.child("34").child("tasks").childByAutoId().setValue("Testing Demo for iOS Presentation");
+//
         //update information
 //        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue("Doing iOS Presentation");
         
@@ -174,7 +174,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //        dbref.child("34").child("tasks/LBJqivTemjN5b87ShJg").setValue(["status": "caught"]);
 
         //delete information
-//        dbref.child("14").removeValue();
+        dbref.child("14").removeValue();
         
         
         

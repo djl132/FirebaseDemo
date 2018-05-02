@@ -20,6 +20,11 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var handle: UInt?
     
+    
+    @IBAction func addPlace(){
+        performSegue(withIdentifier: "addPlace", sender: currentLocation)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -63,18 +68,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
  
     }
         
-    
-//    // Listen for new comments in the Firebase database
-//    commentsRef.observe(.childAdded, with: { (snapshot) -> Void in
-//    self.comments.append(snapshot)
-//    self.tableView.insertRows(at: [IndexPath(row: self.comments.count-1, section: self.kSectionComments)], with: UITableViewRowAnimation.automatic)
-//    })
-//    // Listen for deleted comments in the Firebase database
-//    commentsRef.observe(.childRemoved, with: { (snapshot) -> Void in
-//    let index = self.indexOfMessage(snapshot)
-//    self.comments.remove(at: index)
-//    self.tableView.deleteRows(at: [IndexPath(row: index, section: self.kSectionComments)], with: UITableViewRowAnimation.automatic)
-//    })
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,11 +94,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as? PlaceCell else {return UITableViewCell()}
         cell.placeName?.text = places[indexPath.row]
         return cell
-    }
-    
-    
-    @IBAction func addPlace(){
-        performSegue(withIdentifier: "addPlace", sender: locationManager.location)
     }
     
     /*
@@ -145,10 +133,11 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let vc = segue.destination as? AddLocationController{
-//            print("GOT TO ADDLOCATIONCONTROLLER")
-//
-//        }
+        if let vc = segue.destination as? AddLocationController, let loc = sender as? CLLocation {
+            vc.locationToAdd = loc;
+            print("GOT TO ADDLOCATIONCONTROLLER")
+
+        }
      
         // Pass the selected object to the new view controller.
 

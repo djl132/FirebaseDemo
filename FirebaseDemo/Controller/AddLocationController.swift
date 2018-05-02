@@ -1,51 +1,41 @@
-////
-////  AddLocationController.swift
-////  FirebaseDemo
-////
-////  Created by Derek Joshua Lin on 5/1/18.
-////  Copyright © 2018 umii. All rights reserved.
-////
 //
-//import UIKit
-//import FirebaseDatabase
-//import Firebase
+//  AddLocationController.swift
+//  FirebaseDemo
 //
+//  Created by Derek Joshua Lin on 5/1/18.
+//  Copyright © 2018 umii. All rights reserved.
 //
-//class AddLocationController: UIViewController {
-//
-//    var dbref : DatabaseReference!;
-//    var geoFire : GeoFire!;
-//    var loc:CLLocation = CLLocation();
-//    
-//    override func viewDidLoad() {
-//        dbref = Database.database().reference()
-//        geoFire = GeoFire(firebaseRef: dbref)
-//        
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//    
-//    @IBAction func addLocation(){
-//        
-//    }
-//    
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-//}
-//
+
+import UIKit
+import FirebaseDatabase
+import Firebase
+
+
+class AddLocationController: UIViewController {
+
+    var dbref : DatabaseReference!;
+    var geoFire : GeoFire!;
+    var locationToAdd:CLLocation = CLLocation();
+    @IBOutlet weak var placeName: UITextField!
+    
+    override func viewDidLoad() {
+        dbref = Database.database().reference()
+        geoFire = GeoFire(firebaseRef: dbref)
+        
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func addLocation(){
+        geoFire.setLocation(locationToAdd, forKey:"\(placeName.text!)") //add location to places with a name
+    }
+    
+}
+
 

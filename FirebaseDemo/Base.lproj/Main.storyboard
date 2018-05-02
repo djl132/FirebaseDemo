@@ -49,10 +49,19 @@
                                     <action selector="viewMyPlaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQW-t2-Ymn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B3-BN-6Uy">
+                                <rect key="frame" x="318" y="108" width="41" height="30"/>
+                                <state key="normal" title="Arrow"/>
+                                <connections>
+                                    <action selector="centerMapOnUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pk4-Xh-ej7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1B3-BN-6Uy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="F5j-1b-4po"/>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SXt-Ed-a26"/>
+                            <constraint firstItem="1B3-BN-6Uy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="abl-2d-Slg"/>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bmp-W1-tco"/>
                             <constraint firstItem="b5I-dH-6td" firstAttribute="centerX" secondItem="pi7-D2-l0B" secondAttribute="centerX" id="dbe-Ij-Sgz"/>
                             <constraint firstItem="pi7-D2-l0B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hfv-vz-rqb"/>
@@ -70,9 +79,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.599999999999994" y="79.610194902548727"/>
+            <point key="canvasLocation" x="170" y="80"/>
         </scene>
-        <!--Choose Errand Location-->
+        <!--Tasks For Place-->
         <scene sceneID="2kQ-nF-WOf">
             <objects>
                 <tableViewController id="cNl-kA-yUH" sceneMemberID="viewController">
@@ -108,11 +117,11 @@
                             <outlet property="delegate" destination="cNl-kA-yUH" id="Oqa-50-gmG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose Errand Location" id="PmP-LC-D4q"/>
+                    <navigationItem key="navigationItem" title="Tasks For Place" id="qil-gt-cNN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0k-e0-vxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="68"/>
+            <point key="canvasLocation" x="1670" y="80"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bpk-Wv-fO8">
@@ -129,20 +138,45 @@
             </objects>
             <point key="canvasLocation" x="926" y="806"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Location To Places-->
         <scene sceneID="vHo-oy-g3N">
             <objects>
-                <viewController id="gZU-gQ-pXo" sceneMemberID="viewController">
+                <viewController id="gZU-gQ-pXo" customClass="AddLocationController" customModule="FirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rML-nx-se2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-Le-CRZ">
+                                <rect key="frame" x="37" y="200" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bz-Sc-OlE">
+                                <rect key="frame" x="153" y="318" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Place"/>
+                                <connections>
+                                    <action selector="addLocation" destination="gZU-gQ-pXo" eventType="touchUpInside" id="FGP-Ke-4XD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KWp-Le-CRZ" firstAttribute="centerX" secondItem="rML-nx-se2" secondAttribute="centerX" id="3JL-Ck-5D7"/>
+                            <constraint firstItem="KWp-Le-CRZ" firstAttribute="leading" secondItem="ThS-1i-Nnd" secondAttribute="leading" constant="37" id="Zym-Q5-aja"/>
+                            <constraint firstItem="KWp-Le-CRZ" firstAttribute="top" secondItem="ThS-1i-Nnd" secondAttribute="top" constant="136" id="bGM-RK-4ov"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ThS-1i-Nnd"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Location To Places" id="smc-Dv-LXe"/>
+                    <connections>
+                        <outlet property="placeName" destination="KWp-Le-CRZ" id="O2G-TK-aJH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1I-GB-n3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724" y="806"/>
+            <point key="canvasLocation" x="1724" y="805.54722638680664"/>
         </scene>
         <!--Your Places-->
         <scene sceneID="spo-G9-IUX">
@@ -183,9 +217,16 @@
                             <outlet property="delegate" destination="aJB-Xh-R6T" id="xd5-Wr-I8p"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Places" id="1kZ-L2-kB1"/>
+                    <navigationItem key="navigationItem" title="Your Places" id="1kZ-L2-kB1">
+                        <barButtonItem key="rightBarButtonItem" title="Add Place" id="jq5-Gc-J92">
+                            <connections>
+                                <action selector="addPlace" destination="aJB-Xh-R6T" id="G9C-Mo-XwF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="cNl-kA-yUH" kind="show" id="K8L-fM-Y1y"/>
+                        <segue destination="gZU-gQ-pXo" kind="show" identifier="addPlace" id="oBn-c4-ykU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjo-qh-mRa" userLabel="First Responder" sceneMemberID="firstResponder"/>

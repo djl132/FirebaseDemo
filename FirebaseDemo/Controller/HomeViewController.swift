@@ -71,11 +71,23 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
 
 
-//    @IBAction func centerMapOnUser(_ sender: Any) {
-//        centerMapOnLocation(locationManager)
-//    }
+    @IBAction func centerMapOnUser(_ sender: Any) {
+//        if let location = locationManager.location {
+//            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//            var region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+//            region.center = mapView.userLocation.coordinate
+//            mapView.setRegion(region, animated: true)
+//        }
+//        else {
+//            print("GIVE ME A VALID LOCATION")
+//        }
+    }
+    
+    
+    
 
 
+    
 
       // In a storyboard-based application, you will often want to do a little preparation before navigation
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

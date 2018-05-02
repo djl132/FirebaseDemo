@@ -9,16 +9,15 @@
 import Foundation
 import MapKit
 
-class PokeAnnotation: NSObject, MKAnnotation{
+class TaskAnnotation: NSObject, MKAnnotation{
     
     var coordinate: CLLocationCoordinate2D
-    var pokemonNumber : Int
-    var pokemonName : String
-    var title : String?
+    var numOfTasks : Int?
+    var placeName : String?
     
     var pokemon = ["dsjfksda", "asdfsaf"]
     
-    init(coordinate: CLLocationCoordinate2D, pokemonNumber: Int){
+    init(coordinate: CLLocationCoordinate2D, numOfTasks: Int?, placeName: String?){
         self.coordinate = coordinate
         self.pokemonNumber  = pokemonNumber
         self.pokemonName = pokemon[1].capitalized

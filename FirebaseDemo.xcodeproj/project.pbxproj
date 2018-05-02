@@ -10,13 +10,17 @@
 		466B5BED16B84438AD2C68A4 /* Pods_FirebaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565F4BE242D22250F63F39A5 /* Pods_FirebaseDemo.framework */; };
 		6AFE0B97209520C600ED7829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E29532094485B0080EAA7 /* Main.storyboard */; };
 		6AFE0B992095212600ED7829 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AFE0B982095212600ED7829 /* GoogleService-Info.plist */; };
-		6AFE0B9B2095214F00ED7829 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE0B9A2095214F00ED7829 /* PokeAnnotation.swift */; };
+		6AFE0B9B2095214F00ED7829 /* TaskAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE0B9A2095214F00ED7829 /* TaskAnnotation.swift */; };
 		98BF231DB1A7520BC94DEB89 /* Pods_FirebaseDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531DAED303C2547BCEFBBDDC /* Pods_FirebaseDemoTests.framework */; };
 		F82E29502094485B0080EAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E294F2094485B0080EAA7 /* AppDelegate.swift */; };
 		F82E29522094485B0080EAA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E29512094485B0080EAA7 /* ViewController.swift */; };
 		F82E29572094485B0080EAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E29562094485B0080EAA7 /* Assets.xcassets */; };
 		F82E295A2094485B0080EAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E29582094485B0080EAA7 /* LaunchScreen.storyboard */; };
 		F82E29652094485B0080EAA7 /* FirebaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E29642094485B0080EAA7 /* FirebaseDemoTests.swift */; };
+		F836D0C92099144D00A7875A /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836D0C82099144D00A7875A /* TaskListController.swift */; };
+		F836D0CB2099399200A7875A /* AddLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836D0CA2099399200A7875A /* AddLocationController.swift */; };
+		F836D0CD209939BE00A7875A /* PlacesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836D0CC209939BE00A7875A /* PlacesListController.swift */; };
+		F8D2DF5B2098D7FD00F45451 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2DF5A2098D7FD00F45451 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,7 @@
 		565F4BE242D22250F63F39A5 /* Pods_FirebaseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4C82ACB78774BDE88C5ED0 /* Pods-FirebaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemo/Pods-FirebaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6AFE0B982095212600ED7829 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6AFE0B9A2095214F00ED7829 /* PokeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
+		6AFE0B9A2095214F00ED7829 /* TaskAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAnnotation.swift; sourceTree = "<group>"; };
 		AA81B196F7228CF9892A3775 /* Pods-FirebaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemoTests/Pods-FirebaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3DFE1AEAC08CD23A40B0F87 /* Pods-FirebaseDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemoTests/Pods-FirebaseDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		F82E294C2094485B0080EAA7 /* FirebaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +52,10 @@
 		F82E29602094485B0080EAA7 /* FirebaseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E29642094485B0080EAA7 /* FirebaseDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDemoTests.swift; sourceTree = "<group>"; };
 		F82E29662094485B0080EAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F836D0C82099144D00A7875A /* TaskListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
+		F836D0CA2099399200A7875A /* AddLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationController.swift; sourceTree = "<group>"; };
+		F836D0CC209939BE00A7875A /* PlacesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListController.swift; sourceTree = "<group>"; };
+		F8D2DF5A2098D7FD00F45451 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		F8FB99FF2094E003008A153C /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
 		F8FB9A012094E003008A153C /* GFBase32Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
 		F8FB9A022094E003008A153C /* GFGeoHashQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
@@ -89,7 +97,7 @@
 		6AFE0B9520951EF600ED7829 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6AFE0B9A2095214F00ED7829 /* PokeAnnotation.swift */,
+				6AFE0B9A2095214F00ED7829 /* TaskAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				F82E29512094485B0080EAA7 /* ViewController.swift */,
+				F836D0C82099144D00A7875A /* TaskListController.swift */,
+				F836D0CA2099399200A7875A /* AddLocationController.swift */,
+				F836D0CC209939BE00A7875A /* PlacesListController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 		F82E294E2094485B0080EAA7 /* FirebaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F8D2DF562098D7CB00F45451 /* View */,
 				6AFE0B9520951EF600ED7829 /* Model */,
 				6AFE0B9620951F0F00ED7829 /* Controller */,
 				F8FB99FE2094E003008A153C /* GeoFire */,
@@ -157,6 +169,14 @@
 				F82E29662094485B0080EAA7 /* Info.plist */,
 			);
 			path = FirebaseDemoTests;
+			sourceTree = "<group>";
+		};
+		F8D2DF562098D7CB00F45451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8D2DF5A2098D7FD00F45451 /* TaskCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F8FB99FE2094E003008A153C /* GeoFire */ = {
@@ -376,8 +396,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F836D0CB2099399200A7875A /* AddLocationController.swift in Sources */,
+				F8D2DF5B2098D7FD00F45451 /* TaskCell.swift in Sources */,
 				F82E29522094485B0080EAA7 /* ViewController.swift in Sources */,
-				6AFE0B9B2095214F00ED7829 /* PokeAnnotation.swift in Sources */,
+				F836D0CD209939BE00A7875A /* PlacesListController.swift in Sources */,
+				6AFE0B9B2095214F00ED7829 /* TaskAnnotation.swift in Sources */,
+				F836D0C92099144D00A7875A /* TaskListController.swift in Sources */,
 				F82E29502094485B0080EAA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

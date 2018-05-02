@@ -14,6 +14,7 @@ import Firebase
 class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     
     var places : [String] = []
+    var currentLocation : CLLocation = CLLocation()
     var dbref : DatabaseReference!
     var geoFire : GeoFire!
     let locationManager = CLLocationManager()

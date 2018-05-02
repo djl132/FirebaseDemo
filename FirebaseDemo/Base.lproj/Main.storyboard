@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ixI-2N-M9l">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-962" y="140"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Errands Near You-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="FirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,13 +38,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-D2-l0B">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-dH-6td">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5I-dH-6td" userLabel="viewMyPlaces">
                                 <rect key="frame" x="162" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Da2-KT-pgR"/>
                                     <constraint firstAttribute="height" constant="50" id="Yj9-Rh-26L"/>
                                 </constraints>
                                 <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <action selector="viewMyPlaces:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQW-t2-Ymn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,11 +62,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="v4P-RH-B1D"/>
+                    <navigationItem key="navigationItem" title="Errands Near You" id="PJ9-U1-1Gh"/>
                     <connections>
-                        <outlet property="goToLocations" destination="b5I-dH-6td" id="AuU-Fi-1pH"/>
                         <outlet property="mapView" destination="pi7-D2-l0B" id="TD2-QL-k1O"/>
-                        <segue destination="aJB-Xh-R6T" kind="show" id="97R-jk-pYA"/>
+                        <segue destination="aJB-Xh-R6T" kind="show" identifier="goToPlaces" id="97R-jk-pYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

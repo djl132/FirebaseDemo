@@ -33,7 +33,9 @@ class AddLocationController: UIViewController {
     }
     
     @IBAction func addLocation(){
-        geoFire.setLocation(locationToAdd, forKey:"\(placeName.text!)") //add location to places with a name
+        let name = placeName.text!
+        geoFire.setLocation(locationToAdd, forKey: name)//add location to places with a name
+        dbref.child("places").setValue(["\(name)": "no tasks yet"])
     }
     
 }

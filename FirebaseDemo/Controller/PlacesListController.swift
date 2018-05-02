@@ -33,15 +33,13 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
         
         //get value
         
-        //gt the children in the form of dictionary as a snapshot
+        //get the children in the form of dictionary as a snapshot
         handle = dbref.child("places").observe(.value, with: { (snapshot) in
             if let keys = (snapshot.value as? [String: Any])?.keys {
                 self.places = Array(keys)
             } else {
                 self.places = []
             }
-            
-            
             self.tableView.reloadData()
         })
     }

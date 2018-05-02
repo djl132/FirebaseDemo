@@ -17,8 +17,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     var dbref : DatabaseReference!
     var geoFire : GeoFire!
     let locationManager = CLLocationManager()
-
-    
     var handle: UInt?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +34,8 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
             } else {
                 self.places = []
             }
+            
+            
             self.tableView.reloadData()
         })
     }
@@ -88,7 +88,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return places.count
     }
     
@@ -100,7 +99,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as? PlaceCell else {return UITableViewCell()}
         cell.placeName?.text = places[indexPath.row]
-
         return cell
     }
     

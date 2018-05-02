@@ -13,7 +13,7 @@
 		6AFE0B9B2095214F00ED7829 /* TaskAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE0B9A2095214F00ED7829 /* TaskAnnotation.swift */; };
 		98BF231DB1A7520BC94DEB89 /* Pods_FirebaseDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531DAED303C2547BCEFBBDDC /* Pods_FirebaseDemoTests.framework */; };
 		F82E29502094485B0080EAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E294F2094485B0080EAA7 /* AppDelegate.swift */; };
-		F82E29522094485B0080EAA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E29512094485B0080EAA7 /* ViewController.swift */; };
+		F82E29522094485B0080EAA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E29512094485B0080EAA7 /* HomeViewController.swift */; };
 		F82E29572094485B0080EAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82E29562094485B0080EAA7 /* Assets.xcassets */; };
 		F82E295A2094485B0080EAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82E29582094485B0080EAA7 /* LaunchScreen.storyboard */; };
 		F82E29652094485B0080EAA7 /* FirebaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E29642094485B0080EAA7 /* FirebaseDemoTests.swift */; };
@@ -46,7 +46,7 @@
 		B3DFE1AEAC08CD23A40B0F87 /* Pods-FirebaseDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemoTests/Pods-FirebaseDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		F82E294C2094485B0080EAA7 /* FirebaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82E294F2094485B0080EAA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F82E29512094485B0080EAA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F82E29512094485B0080EAA7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F82E29542094485B0080EAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F82E29562094485B0080EAA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F82E29592094485B0080EAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		6AFE0B9620951F0F00ED7829 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F82E29512094485B0080EAA7 /* ViewController.swift */,
+				F82E29512094485B0080EAA7 /* HomeViewController.swift */,
 				F836D0C82099144D00A7875A /* TaskListController.swift */,
 				F836D0CA2099399200A7875A /* AddLocationController.swift */,
 				F836D0CC209939BE00A7875A /* PlacesListController.swift */,
@@ -404,7 +404,7 @@
 			files = (
 				F836D0CB2099399200A7875A /* AddLocationController.swift in Sources */,
 				F8D2DF5B2098D7FD00F45451 /* TaskCell.swift in Sources */,
-				F82E29522094485B0080EAA7 /* ViewController.swift in Sources */,
+				F82E29522094485B0080EAA7 /* HomeViewController.swift in Sources */,
 				F836D0CD209939BE00A7875A /* PlacesListController.swift in Sources */,
 				6AFE0B9B2095214F00ED7829 /* TaskAnnotation.swift in Sources */,
 				F836D0C92099144D00A7875A /* TaskListController.swift in Sources */,

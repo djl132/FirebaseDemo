@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         dbref = Database.database().reference()
         geoFire = GeoFire(firebaseRef: dbref)
         mapView.delegate = self //make the view controller the map view 's delegate (why does it do this?)
-        mapView.userTrackingMode = MKUserTrackingMode.follow //have map centered on user's location
+//        mapView.userTrackingMode = MKUserTrackingMode.follow //have map centered on user's location
 
     }
 

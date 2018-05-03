@@ -53,14 +53,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidLoad() {
-   
-        //display places
-//        let placesRef = dbref.child(byAppendingPath: "places")
-//        placesRef.queryOrdered(byChild: "placeName").observe(.childAdded, with: { snapshot in
-//
-//            if let title = snapshot.value() as? String {
-//                self.titlesArray.append(title)
-//            }
 
         super.viewDidLoad()
  
@@ -134,7 +126,10 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
         if let vc = segue.destination as? AddLocationController, let loc = sender as? CLLocation {
             vc.locationToAdd = loc;
             print("GOT TO ADDLOCATIONCONTROLLER")
-
+        }
+        
+        else if let vc = segue.destination as? TaskListController, let place = sender as? String{
+            vc.place = place
         }
      
         // Pass the selected object to the new view controller.

@@ -1,93 +1,71 @@
-////
-////  TaskListController.swift
-////  FirebaseDemo
-////
-////  Created by Derek Joshua Lin on 5/1/18.
-////  Copyright © 2018 umii. All rights reserved.
-////
 //
-//import UIKit
-//import FirebaseDatabase
-//import Firebase
+//  TaskListController.swift
+//  FirebaseDemo
 //
-//class TaskListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-//    
-//    @IBOutlet var taskList: UITableView!
-//    
-//    var dbref : DatabaseReference!;
-//    var geoFire : GeoFire!;
-//    
-//    var place : String = "";
-//    var tasks : [String] = [];
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return tasks.count;
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//   
-//        return cell
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    }
-//    
-//    
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        dbref = Database.database().reference()
-//        geoFire = GeoFire(firebaseRef: dbref)
-//        taskList.rowHeight = UITableViewAutomaticDimension
-//        taskList.estimatedRowHeight = 25
-//    }
-//    
-//    
-//    //save GPS location of pokemon in DB
-//    //ASSOCIATE LOCATION WITH INFORMATION
-//    func createTaskForPlace(forLocation location: CLLocation, withTask taskDescription: String?){
-//        
-//        //check if location exists
-//        //query for locations 2.5 km away from user
+//  Created by Derek Joshua Lin on 5/1/18.
+//  Copyright © 2018 umii. All rights reserved.
 //
-//        if let placesQuery = geoFire?.query(at: location, withRadius: 2.5) {
-//            //CHECK WHAT IS RETURNED HERE.
-//            _ = circleQuery?.observe(GFEventType.keyEntered, with: { (key, location) in
-//                
-//                let key = key
-//                let location = location
-//                
-//                let anno = PokeAnnotation(coordinate: location.coordinate, pokemonNumber: Int(key)!)
-//                self.mapView.addAnnotation(anno) //display annotations on map
-//                ////WHAT DOES ADDANNOTATION DO?
-//                
-//            })
-//        }
-//        
-//        
-//        //listen and handle returned data(keys), aka PokemonId
-//        //IS EVERY ANNOTATION ADDED? WHAT HAPPENES?
-//        
-//        
-//        //create a places object with location key
-//        if let task = taskDescription {
-//            geoFire.setLocation(location, forKey: task)
-//        }
-//        
-//    }
-//    
-//    
-//    
-//    
-//    @IBAction func exitToMapView(sender: AnyObject) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//    
-//    
-//    
-//    
-//    
-//    
-//}
+
+import UIKit
+import FirebaseDatabase
+import Firebase
+
+class TaskListController: UITableViewController {
+    
+
+    var handle: UInt?
+    var dbref : DatabaseReference!;
+    var geoFire : GeoFire!;
+    
+    var place : String = "";
+    var tasks : [String] = [];
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //CONFIGURE
+        dbref = Database.database().reference()
+        geoFire = GeoFire(firebaseRef: dbref)
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 25
+        
+        //get the children in the form of key array of dictionary as a snapshot
+        handle = dbref.child("places/\(place)/tasks").observe(.value, with: { (snapshot) in
+            if let keys = (snapshot.value as? [Int : String])?.values {
+                self.tasks = Array(keys)
+            } else {
+                self.tasks = []
+            }
+            self.tableView.reloadData()
+        })
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count;
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskCell else {return UITableViewCell()}
+        cell.taskDescription?.text = tasks[indexPath.row]
+        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+   
+    
+    
+    
+}
+
 

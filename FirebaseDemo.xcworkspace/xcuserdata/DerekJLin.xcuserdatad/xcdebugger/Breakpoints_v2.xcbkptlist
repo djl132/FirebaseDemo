@@ -6,6 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -225,15 +226,29 @@
             endingLineNumber = "82"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseDemo/Controller/PlacesListController.swift"
+            timestampString = "546971316.383965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseDemo/Controller/PlacesListController.swift"
+<<<<<<< HEAD
             timestampString = "547066800.274111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -241,6 +256,15 @@
             endingLineNumber = "83"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            timestampString = "546971316.384735"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,6 +274,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseDemo/Controller/PlacesListController.swift"
+<<<<<<< HEAD
             timestampString = "547066800.27438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -257,6 +282,15 @@
             endingLineNumber = "85"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            timestampString = "546971316.385186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -266,22 +300,32 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseDemo/Controller/PlacesListController.swift"
+<<<<<<< HEAD
             timestampString = "547066800.27469"
+=======
+            timestampString = "546971316.385565"
+>>>>>>> full-demo
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
+<<<<<<< HEAD
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseDemo/Controller/PlacesListController.swift"
+<<<<<<< HEAD
             timestampString = "547066800.2749619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -289,15 +333,25 @@
             endingLineNumber = "28"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            timestampString = "546971419.982371"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseDemo/Controller/PlacesListController.swift"
+<<<<<<< HEAD
             timestampString = "547066800.275227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -305,6 +359,15 @@
             endingLineNumber = "31"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            timestampString = "546971457.552765"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -361,6 +424,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "FirebaseDemo/Controller/PlacesListController.swift"
             timestampString = "547066800.2758729"
             startingColumnNumber = "9223372036854775807"
@@ -721,6 +785,16 @@
             endingLineNumber = "24"
             landmarkName = "unknown"
             landmarkType = "0">
+=======
+            filePath = "FirebaseDemo/Controller/ViewController.swift"
+            timestampString = "546972913.982078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "createSighting(forLocation:withPokemon:)"
+            landmarkType = "7">
+>>>>>>> full-demo
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

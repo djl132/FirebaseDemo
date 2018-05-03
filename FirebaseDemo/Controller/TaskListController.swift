@@ -32,7 +32,7 @@ class TaskListController: UITableViewController {
         
         //get the children in the form of key array of dictionary as a snapshot
         handle = dbref.child("places/\(place)/tasks").observe(.value, with: { (snapshot) in
-            if let keys = (snapshot.value as? [Int : String])?.values {
+            if let keys = (snapshot.value as? [String : String])?.values {
                 self.tasks = Array(keys)
             } else {
                 self.tasks = []
@@ -50,12 +50,23 @@ class TaskListController: UITableViewController {
     
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskCell else {return UITableViewCell()}
         cell.taskDescription?.text = tasks[indexPath.row]
+        
         return cell
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    @IBAction func addTask(){
+      performSegue(withIdentifier: "goAddTask", sender: place)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? AddTaskController  {
+            vc.place = place;
+        }
     }
     
     override func viewDidLoad() {

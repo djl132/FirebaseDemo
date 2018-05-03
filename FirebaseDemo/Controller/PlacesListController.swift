@@ -20,7 +20,6 @@ class PlacesListController: UITableViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var handle: UInt?
     
-    
     @IBAction func addPlace(){
         performSegue(withIdentifier: "addPlace", sender: currentLocation)
     }

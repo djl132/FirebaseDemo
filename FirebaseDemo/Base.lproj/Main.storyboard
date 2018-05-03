@@ -117,26 +117,73 @@
                             <outlet property="delegate" destination="cNl-kA-yUH" id="Oqa-50-gmG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tasks For Place" id="qil-gt-cNN"/>
+                    <navigationItem key="navigationItem" title="Tasks For Place" id="qil-gt-cNN">
+                        <barButtonItem key="rightBarButtonItem" title="Add Task" id="hfu-NM-jmv">
+                            <connections>
+                                <action selector="addTask" destination="cNl-kA-yUH" id="DPu-bN-LY4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Ay2-Cv-nJk" kind="show" identifier="goAddTask" id="tj6-5d-DmC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0k-e0-vxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1670" y="80"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Task Controller-->
         <scene sceneID="bpk-Wv-fO8">
             <objects>
-                <viewController id="Ay2-Cv-nJk" sceneMemberID="viewController">
+                <viewController id="Ay2-Cv-nJk" customClass="AddTaskController" customModule="FirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AAK-ID-wOj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr8-X5-cmw">
+                                <rect key="frame" x="126" y="139" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujx-AT-hsO">
+                                <rect key="frame" x="148" y="416.5" width="79" height="30"/>
+                                <state key="normal" title="add task"/>
+                                <connections>
+                                    <action selector="addTask" destination="Ay2-Cv-nJk" eventType="touchUpInside" id="2X2-6R-pZT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDF-0n-8gw">
+                                <rect key="frame" x="37" y="283.5" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="RM0-j3-Rgu"/>
+                                    <constraint firstAttribute="width" constant="300" id="bue-lb-qHH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ujx-AT-hsO" firstAttribute="centerX" secondItem="AAK-ID-wOj" secondAttribute="centerX" id="1dr-nU-IKq"/>
+                            <constraint firstItem="hDF-0n-8gw" firstAttribute="centerY" secondItem="AAK-ID-wOj" secondAttribute="centerY" id="3mi-Db-BhT"/>
+                            <constraint firstItem="ujx-AT-hsO" firstAttribute="top" secondItem="hDF-0n-8gw" secondAttribute="bottom" constant="33" id="421-an-pBM"/>
+                            <constraint firstItem="hDF-0n-8gw" firstAttribute="centerX" secondItem="AAK-ID-wOj" secondAttribute="centerX" id="CbE-8j-8ws"/>
+                            <constraint firstItem="Dr8-X5-cmw" firstAttribute="centerX" secondItem="AAK-ID-wOj" secondAttribute="centerX" id="HKU-OM-C3T"/>
+                            <constraint firstItem="hDF-0n-8gw" firstAttribute="centerX" secondItem="AAK-ID-wOj" secondAttribute="centerX" id="KUL-Ix-1FI"/>
+                            <constraint firstItem="Dr8-X5-cmw" firstAttribute="top" secondItem="c8b-3M-xQe" secondAttribute="top" constant="75" id="duS-nb-bOc"/>
+                            <constraint firstItem="ujx-AT-hsO" firstAttribute="leading" secondItem="c8b-3M-xQe" secondAttribute="leading" constant="148" id="mrO-QU-Djf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="c8b-3M-xQe"/>
                     </view>
+                    <connections>
+                        <outlet property="taskDescription" destination="hDF-0n-8gw" id="8wt-ja-OvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imc-Es-bpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="806"/>
+            <point key="canvasLocation" x="925.60000000000002" y="805.54722638680664"/>
         </scene>
         <!--Add Location To Places-->
         <scene sceneID="vHo-oy-g3N">
